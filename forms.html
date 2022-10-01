@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fomrs</title>
+    <style>
+        *{
+            padding: 5px;
+            margin: 5px;  
+        }
+        .body{
+            background: #ffffff;
+	color: #111111;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding: 20px;
+        }
+       .payment  {
+	border: none;
+	margin-bottom: 10px;
+    background: #9cbc2c;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	padding: 10px;
+	width: 500px;
+}
+form.payment fieldset {
+	border: none;
+	margin-bottom: 10px;
+}
+.payment :last-of-type {
+	
+    
+	margin-bottom: 0px;
+}
+.payment legend{
+    color: #384313;
+    font-size: medium;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 1px #c0d576;
+}
+form .payment>fieldset>legend::before{
+    content: "Step " counter(fieldsets) ": ";
+    counter-increment: fieldsets;
+}
+/*form#payment fieldset fieldset legend {
+	color: #111111;
+	font-size: 13px;
+	font-weight: normal;
+	padding-bottom: 0;
+}*/
+/*list style*/
+.payment ol li{
+    background-color: #c0d576;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 5px 10px;
+    list-style: none;
+    line-height: 30px;
+
+
+}
+.payment ol ol li{
+    border: none;
+    background:none;
+    float: left;
+}
+/* lable*/
+.payment label{
+    float: left;
+	font-size: 13px;
+	width: 110px;
+}
+form.payment fieldset fieldset label {
+	background:none no-repeat left 50%;
+	line-height: 20px;
+	padding: 0 0 0 30px;
+	width: auto;
+}
+/*form .payment label[for=visa] {
+	background-image: url(../images/visa.png);
+    width: 20px;
+    height: 20px;
+}
+form.payment label[for=mastercard] {
+	background-image: url(../images/mastercard.png);
+}
+form .payment fieldset fieldset label:hover{
+    cursor: pointer;
+}*/
+/* input element*/
+
+form.payment textarea {
+	background: #ffffff;
+	border: none;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	border-radius: 3px;
+	font: italic 13px Georgia, "Times New Roman", Times, serif;
+	outline: none;
+	padding: 5px;
+	width: 200px;
+}
+form.payment input:not([type=submit]):focus,
+form.payment textarea:focus {
+	background: #eaeaea;
+}
+form.payment input[type=radio] {
+	float: right;
+	margin-right:2px;
+}
+/*button*/
+form.payment button{
+background: #384313;
+	border: none;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-khtml-border-radius: 20px;
+	border-radius: 20px;
+	color: #ffffff;
+	display: block;
+	font: 18px Georgia, "Times New Roman", Times, serif;
+	letter-spacing: 1px;
+	margin: auto;
+	padding: 7px 25px;
+	text-shadow: 0 1px 1px #000000;
+	text-transform: uppercase;
+}
+form.payment button:hover {
+	background: #1e2506;
+	cursor: pointer;
+}
+/*#radio{
+display: inline-block;
+word-spacing: 20px;
+background-color: none;
+}*/
+    </style>
+</head>
+<body class="body">
+    <h1>Form</h1>
+    <form class="payment">
+    <fieldset>    
+    <legend class="legend">Your details</legend>
+<ol>
+     <li><label for="name">Name</label> 
+         <input type="text" name="name" placeholder="first and last name"></li>
+     <li><lable for="email">email</lable>
+        <input type="email" name="email" placeholder="abc@gmail.com"> </li>
+    <li> <label for="Contact">Contact</label><input type="tel" name="contact" placeholder="1234567890"></li>
+    </ol>
+    </fieldset>
+          <fieldset>
+     <legend>Delivery Address</legend>
+     <ol>
+     <li><label for="Address">Address</label>
+        <textarea type="address" name="address"></textarea></li>
+     <li><label for="Post Code">Post Code</label><input type="number" name="num"></li>
+     <li><label for="Country">Country</label><input type="text" name="country"></li>
+     </ol>
+     </fieldset>
+     <fieldset>
+     <legend>Card Details</legend>  
+     <ol>
+        <li>   
+            <fieldset>
+     <legend>Card Type</legend>
+     <ol>
+        <li><input type="radio" name="card">
+        <label for="visa">VISA</label>
+        </li>
+            <li>
+        <input type="radio" name="card">
+        <label for="MasterCard">MasterCard</label>
+       </li>
+     </ol>
+     </fieldset>
+     </li>
+     
+        <li>
+            <label for=" CardNumber"> Card Number</label>
+        <input type="text>" name="cnum" required>
+   </li>
+   <li>
+        <label for="Security Code">Security Code</label>
+        <input type="text" name="security" required>
+    </li>
+    <li>
+        <label for=namecard>Name on card</label>
+        <input id=namecard name=namecard type=text placeholder="Exact name as on the card" required>
+    </li>
+
+</fieldset>
+     <button type=submit>Buy it!</button>
+     
+</form>
+</body>
+</html>
